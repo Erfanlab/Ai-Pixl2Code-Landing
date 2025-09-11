@@ -90,33 +90,13 @@
 * {
   font-family: dana !important;
 }
-.easytrader__services-1 {
-  background: url(/src/images/services-1.png) no-repeat;
-  background-size: cover;
-}
-.easytrader__services-2 {
-  background: url(/src/images/services-2.png) no-repeat;
-  background-size: cover;
-}
-.easytrader__services-3 {
-  background: url(/src/images/services-6.png) no-repeat;
-  background-size: cover;
-}
-.easytrader__services-4 {
-  background: url(/src/images/services-4.png) no-repeat;
-  background-size: cover;
-}
-.easytrader__services-7 {
-  background: url(/src/images/services-7.png) no-repeat;
-  background-size: cover;
-}
 .background-video {
-  background-image: url("/src/images/banner-landing-large-size.jpg");
+  background-image: url("");
 }
 
 @media screen and (min-width: 769px) {
   .background-video-hami {
-    background-image: url("/src/images/hami-poster-desktop.jpg");
+    background-image: url("");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -124,12 +104,15 @@
 }
 @media screen and (max-width: 768px) {
   .background-video-hami {
-    background-image: url("/src/images/hami-poster-mobile.jpg");
+    background-image: url("");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
-}
+} 
+
+
+
 
 a,
 address,
@@ -403,7 +386,7 @@ video {
   }
 }
 .nav-item {
-  @apply  p-4 border-b-4 border-transparent border-solid hover:border-primary-500 hover:text-primary-500 transition-all  cursor-pointer;
+  @apply  p-4 border-b-4 border-transparent border-solid hover:border-[#00AAA5] hover:text-primary-500 transition-all  cursor-pointer;
 }
 .btn-primary { 
   @apply bg-[#00AAA5] hover:bg-primary-500 cursor-pointer text-white p-4 rounded-xl lg:min-w-[125px] h-[45px] text-center flex items-center gap-1 justify-center;
@@ -451,12 +434,12 @@ video {
 }
 
 .circle-item {
-  @apply lg:hover:bg-neutral-200 transition-all duration-300  cursor-pointer text-xs p-4 lg:text-base  border-2 border-solid border-neutral-100 rounded-md bg-neutral-50 z-30 text-start justify-center items-center flex text-neutral-500;
+  @apply lg:hover:bg-neutral-200 transition-all duration-300  cursor-pointer text-xs p-4 lg:text-base  border-2 border-solid border-black rounded-md bg-black z-30 text-start justify-center items-center flex text-neutral-500;
 }
 
 .active {
   .circle-item {
-    @apply transition-all  duration-300   border border-solid border-primary-500 rounded-md;
+    @apply transition-all  duration-300   border border-solid bg-[#00AAA5] border-primary-500 rounded-md;
   }
 }
 .circle-way {
@@ -464,7 +447,7 @@ video {
 }
 .active {
   &.circle-item {
-    @apply border-primary-500 border-solid  border-2 text-black bg-neutral-100 lg:hover:bg-neutral-200;
+    @apply border-[#00AAA5] bg-[#00AAA5] border-solid  border-2 text-white  lg:hover:bg-neutral-200;
   }
   .circle-more {
     @apply flex lg:hidden;
