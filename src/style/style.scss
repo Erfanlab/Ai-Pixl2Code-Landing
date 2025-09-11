@@ -111,10 +111,24 @@
   background-size: cover;
 }
 .background-video {
-  background-image: url("/src/images/banner-landing-large-size.jpg"),
-    url("/src/images/banner-landing-min-size.jpg");
-  background-size: cover;
-  transition: all 1s;
+  background-image: url("/src/images/banner-landing-large-size.jpg");
+}
+
+@media screen and (min-width: 769px) {
+  .background-video-hami {
+    background-image: url("/src/images/hami-poster-desktop.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+@media screen and (max-width: 768px) {
+  .background-video-hami {
+    background-image: url("/src/images/hami-poster-mobile.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
 
 a,
@@ -151,6 +165,9 @@ video {
 
 section {
   display: block;
+}
+html {
+  scroll-behavior: smooth;
 }
 body {
   line-height: 1;
@@ -340,7 +357,8 @@ video {
 }
 .open {
   .row-item {
-    height: 92px !important;
+    @apply flex-grow;
+    height: auto;
   }
   button {
     color: rgb(0, 167, 150) !important;
@@ -350,25 +368,60 @@ video {
     rotate: 180deg;
   }
 }
-html {
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+
+
+.Discovered.open-modal {
+  .nav-bar {
+    background-color: black !important;
+    color: white !important;
+  }
+}
+.Discovered {
+  .nav-bar {
+    @apply bg-white backdrop-blur-[3px] bg-opacity-50 text-black transition-all duration-300;
+  }
+
+  .menu-overlay {
+    @apply fixed bottom-0 transition-all duration-700;
+  }
+  .nav-btn {
+    @apply lg:flex;
+  }
+}
+.nav-btn {
+  @apply hidden;
 }
 
-html section {
-  scroll-snap-align: start;
+.close-menu {
+  @apply lg:hidden;
 }
 
+.nav-bar {
+  @apply flex text-white lg:justify-between items-center fixed top-0  z-40 w-full p-5 lg:py-0 transition-all duration-300;
+  ul {
+    @apply hidden lg:flex;
+  }
+}
 .nav-item {
-  @apply p-2 hover:text-[#00AAA5] transition-all hidden lg:block;
+  @apply  p-4 border-b-4 border-transparent border-solid hover:border-primary-500 hover:text-primary-500 transition-all  cursor-pointer;
 }
-.btn-primary {
-  @apply bg-primary-500 hover:bg-primary-400 cursor-pointer text-white p-4 rounded-md lg:min-w-[125px] h-[45px] text-center flex items-center gap-1 justify-center;
-} 
+.btn-primary { 
+  @apply bg-[#00AAA5] hover:bg-primary-500 cursor-pointer text-white p-4 rounded-xl lg:min-w-[125px] h-[45px] text-center flex items-center gap-1 justify-center;
+}
+.btn-primary-lg {
+  @apply w-full lg:text-lg py-4 px-16 gap-2 text-nowrap items-center justify-center text-center border-2 border-solid border-transparent font-medium focus:outline-none transition ease-in-out duration-300 rounded-xl  text-white bg-[#00AAA5] hover:bg-primary-500;
+}
 .btn-white {
-  @apply font-bold bg-white lg:p-4 p-2 rounded-md lg:min-w-[125px] text-sm lg:text-base cursor-pointer h-[45px] text-center hover:bg-slate-200 flex items-center gap-1 justify-center;
+  @apply font-bold bg-white lg:p-4 p-2 rounded-xl lg:min-w-[125px] text-sm lg:text-base cursor-pointer h-[45px] text-center hover:bg-slate-200 flex items-center gap-1 justify-center;
+}
+.btn-outline {
+  @apply w-full lg:text-lg py-4 px-16 gap-2 text-nowrap items-center justify-center text-center font-medium focus:outline-none transition ease-in-out duration-300 rounded-xl  text-white border-2 border-solid border-white hover:bg-white hover:text-black;
+}
+.btn-outline-dark {
+  @apply cursor-pointer p-4 rounded-xl lg:min-w-[125px] h-[45px] text-center flex items-center gap-1 justify-center text-black border-2 border-solid border-black hover:bg-black hover:text-white;
 }
 .chevron-welcome {
+  @apply absolute bottom-[85px] text-white z-20 w-full ;
   animation: chevron-welcome 1s ease-in-out infinite alternate;
 }
 @keyframes chevron-welcome {
@@ -379,29 +432,15 @@ html section {
     transform: translateY(-10px);
   }
 }
-.open-modal {
-  overflow: hidden;
-  .menu-container {
-    @apply fixed flex flex-col top-0 left-0 z-50 w-full h-screen bg-black    items-end justify-between overflow-hidden px-2 py-4;
-    .menu-list {
-      @apply flex flex-col gap-1 w-full  bg-black text-white   items-end  justify-start overflow-hidden text-white;
-      .menu-item {
-        @apply flex flex-col border-solid w-full text-start py-3 border-b border-opacity-25 border-white;
-      }
-      .close-menu {
-        @apply w-full text-white cursor-pointer;
-      }
-    }
+
+.menu-overlay {
+  @apply lg:hidden fixed  p-3 -bottom-[100%] transition-all duration-700  w-full z-[38];
+
+  .overlay-item {
+    @apply flex justify-between rounded-xl items-center p-3  text-black  bg-black bg-opacity-80 backdrop-blur-md w-full border-t border-solid border-[#00AAA5] ;
   }
 }
 
-.menu-overlay {
-  @apply lg:hidden fixed p-2 bottom-0  w-full z-40;
-  animation: fadeIn 0.5s ease-in-out;
-  .overlay-item {
-    @apply flex justify-between items-center px-5 py-3  text-black  bg-white rounded-md w-full   border border-solid border-black border-opacity-10;
-  }
-}
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -412,24 +451,37 @@ html section {
 }
 
 .circle-item {
-  @apply rounded-full  cursor-pointer text-xs lg:text-base w-[40px] min-h-[40px]  lg:w-[50px] lg:min-h-[50px]  bg-neutral-300 z-30 text-center justify-center items-center flex text-white;
+  @apply lg:hover:bg-neutral-200 transition-all duration-300  cursor-pointer text-xs p-4 lg:text-base  border-2 border-solid border-neutral-100 rounded-md bg-neutral-50 z-30 text-start justify-center items-center flex text-neutral-500;
 }
 
 .active {
   .circle-item {
-    @apply transition-all  duration-300    bg-primary-500;
+    @apply transition-all  duration-300   border border-solid border-primary-500 rounded-md;
   }
+}
+.circle-way {
+  @apply w-full circle-item flex flex-col gap-2 items-center justify-center  flex-grow;
 }
 .active {
   &.circle-item {
-    @apply bg-primary-500  text-white;
+    @apply border-primary-500 border-solid  border-2 text-black bg-neutral-100 lg:hover:bg-neutral-200;
+  }
+  .circle-more {
+    @apply flex lg:hidden;
+  }
+  .chevron {
+    @apply rotate-180 duration-300 transition-all;
   }
 }
-
-.line-way {
-  @apply lg:w-[2px] flex-grow  bg-neutral-300 max-md:h-[2px];
-
-  .active & {
-    @apply bg-primary-500; 
+.chevron {
+  @apply duration-300 transition-all lg:hidden;
+}
+.container-button-hero {
+  @apply lg:flex w-full lg:w-auto max-md:items-center  lg:flex-col flex-col-reverse  gap-2 md:flex-row xl:flex-col justify-center items-start  z-40;
+}
+.banner-Ads {
+  @apply flex justify-center items-center bg-[#e3e6d5] overflow-hidden h-[35px] lg:h-[45px];
+  img {
+    @apply h-[30px] lg:h-[40px];
   }
 }

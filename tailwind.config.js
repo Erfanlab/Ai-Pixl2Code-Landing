@@ -5,6 +5,9 @@ module.exports = {
   content: ["./**/*.{html,js}", "./**/*.{html,js}"],
   theme: {
     extend: {
+      screens: {
+        desktop: "1500px",
+      },
       borderColor: {
         "m-blue": {
           a10: "rgba(82,  206 , 255 ,1)",
@@ -170,6 +173,7 @@ module.exports = {
         primary: {
           400: "#63C7DB",
           500: "#0096B7",
+          600: "#034c68",
         },
       },
     },
