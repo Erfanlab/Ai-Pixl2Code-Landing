@@ -496,14 +496,10 @@ video {
   }
 }
 .tab-caption{
-  @apply h-full  flex-col gap-2 w-full overflow-hidden text-[12px] lg:hidden;
-}
-.tab-caption{
-@apply hidden;
-
+  @apply h-full  flex-col gap-2 w-full overflow-hidden text-[12px] hidden lg:hidden;
 }
 .active{
   .tab-caption{
-    @apply  flex;
+    @apply  flex lg:hidden;
   }
 }
