@@ -173,6 +173,9 @@ ul {
   text-decoration: inherit;
   vertical-align: inherit;
 }
+b{
+  @apply font-bold;
+}
 
 h1,
 h2,
@@ -434,8 +437,8 @@ video {
 }
 
 .circle-item {
-  @apply lg:hover:bg-neutral-200 transition-all duration-300  cursor-pointer text-xs p-4 lg:text-base  border-2 border-solid border-black rounded-md bg-black z-30 text-start justify-center items-center flex text-neutral-500;
-}
+  @apply lg:hover:bg-neutral-200 transition-all duration-300  cursor-pointer text-xs p-4   border-2 border-solid border-[#C0C0C0] rounded-md bg-[#C0C0C0] text-nowrap z-30  justify-center items-center flex text-[#898989];
+} 
 
 .active {
   .circle-item {
@@ -447,7 +450,7 @@ video {
 }
 .active {
   &.circle-item {
-    @apply border-[#00AAA5] bg-[#00AAA5] border-solid  border-2 text-white  lg:hover:bg-neutral-200;
+    @apply border-[#00AAA5] bg-white lg:bg-[#00AAA5] border-solid  border-2 text-black lg:text-white  lg:hover:bg-[#019b96];
   }
   .circle-more {
     @apply flex lg:hidden;
@@ -466,5 +469,41 @@ video {
   @apply flex justify-center items-center bg-[#e3e6d5] overflow-hidden h-[35px] lg:h-[45px];
   img {
     @apply h-[30px] lg:h-[40px];
+  }
+}
+
+.date{
+  @apply flex items-center;
+}
+.date::after{
+  content: '';
+  @apply w-[10px] lg:w-[30px] h-[1px] bg-[#019b96];
+
+
+}
+.date:last-child::after{
+  @apply hidden;
+}
+.date{
+  .calendar{
+    @apply flex flex-col justify-center items-center text-nowrap;
+    div{
+      @apply text-xs font-bold;
+    }
+    small{
+      @apply text-xs;
+    }
+  }
+}
+.tab-caption{
+  @apply h-full  flex-col gap-2 w-full overflow-hidden text-[12px] lg:hidden;
+}
+.tab-caption{
+@apply hidden;
+
+}
+.active{
+  .tab-caption{
+    @apply  flex;
   }
 }
