@@ -190,7 +190,7 @@ h6 {
 button,
 input,
 select,
-textarea {
+textarea {  
   font-family: inherit;
   font-size: 100%;
   font-weight: inherit;
@@ -363,10 +363,12 @@ video {
   }
 }
 .Discovered {
+  .btn-get-start{
+    @apply flex btn-white;
+  }
   .nav-bar {
     @apply bg-white backdrop-blur-[3px] bg-opacity-50 text-black transition-all duration-300;
   }
-
   .menu-overlay {
     @apply fixed bottom-0 transition-all duration-700;
   }
@@ -389,7 +391,7 @@ video {
   }
 }
 .nav-item {
-  @apply  p-4 border-b-4 border-transparent border-solid hover:border-[#00AAA5] hover:text-primary-500 transition-all  cursor-pointer;
+  @apply  px-4  pt-4 pb-6 border-b-4 border-transparent border-solid hover:border-[#00AAA5] hover:text-primary-500 transition-all  cursor-pointer;
 }
 .btn-primary { 
   @apply bg-[#00AAA5] hover:bg-primary-500 cursor-pointer text-white p-4 rounded-xl lg:min-w-[125px] h-[45px] text-center flex items-center gap-1 justify-center;
@@ -503,3 +505,33 @@ video {
     @apply  flex lg:hidden;
   }
 }
+
+:root{
+  --bg-secondry: #406d8d ;
+  --bg-base: #c3aed0;
+}
+/* animation shine section [start]*/
+.bg-shiny {
+  height: 100%;
+  width: 100%;
+  background-color: var(--bg-base);
+  background-image: radial-gradient(at 40% 20%, #887191, transparent 50%),
+    radial-gradient(at 80% 0%, var(--bg-secondry), transparent 50%);
+  animation: gradient 10s ease infinite;
+  background-size: 200% 200%;
+}
+@keyframes gradient {   
+  0% {
+    background-position: 0% 20%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 50% 70%;
+  }
+  100% {
+    background-position: 0% 20%;
+  }
+}
+/* animation shine section [end] */
