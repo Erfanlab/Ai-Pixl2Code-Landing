@@ -24,11 +24,3 @@ Built with **HTML**, **Tailwind CSS**, and **JavaScript**.
 - **JavaScript (Vanilla JS)**  
 
 ---
-
-📂 Project Structure
-ai-conference-landing
-┣ 📂 assets        # images, icons
-┣ 📂 css           # custom styles (if needed)
-┣ 📂 js            # scripts (countdown, animations)
-┣ 📜 index.html    # main landing page
-┗ 📜 README.md     # project documentation
