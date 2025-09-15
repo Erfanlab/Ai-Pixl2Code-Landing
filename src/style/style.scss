@@ -425,7 +425,7 @@ video {
   @apply lg:hidden fixed  p-3 -bottom-[100%] transition-all duration-700  w-full z-[38];
 
   .overlay-item {
-    @apply flex justify-between rounded-xl items-center p-3  text-black  bg-black bg-opacity-80 backdrop-blur-md w-full border-t border-solid border-[#00AAA5] ;
+    @apply flex justify-between rounded-xl items-center p-3  text-black  bg-black bg-opacity-80 backdrop-blur-md w-full ;
   }
 }
 
@@ -479,7 +479,7 @@ video {
 }
 .date::after{
   content: '';
-  @apply w-[10px] lg:w-[30px] h-[1px] bg-[#019b96];
+  @apply w-[10px] lg:w-[30px] h-[1px] bg-[#00AAA5];
 
 
 }
@@ -488,9 +488,12 @@ video {
 }
 .date{
   .calendar{
-    @apply flex flex-col justify-center items-center text-nowrap;
+    @apply flex flex-col gap-1 justify-center items-center text-nowrap;
     div{
       @apply text-xs font-bold;
+    }
+    svg{
+      @apply text-[#00AAA5]
     }
     small{
       @apply text-xs;
@@ -507,8 +510,8 @@ video {
 }
 
 :root{
-  --bg-secondry: #406d8d ;
-  --bg-base: #c3aed0;
+  --bg-secondry: #4518DB ;
+  --bg-base: #7B29FF;
 }
 /* animation shine section [start]*/
 .bg-shiny {
