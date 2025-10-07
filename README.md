@@ -5,7 +5,7 @@ A responsive and modern landing page for an Artificial Intelligence Conference.
 Built with **HTML**, **Tailwind CSS**, and **JavaScript**.
 
 🚀 Demo
-[Live Preview](https://erfanlab.github.io/Ai-Mofid-Landing/)
+[Live Preview](https://erfanlab.github.io/Ai-Pixl2Code-Landing/)
 
 📌 Features
 - ✅ Fully responsive design  
