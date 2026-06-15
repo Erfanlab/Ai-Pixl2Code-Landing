@@ -1,3 +1,0 @@
-# mofid-land
-
-Erfanlabbafi
